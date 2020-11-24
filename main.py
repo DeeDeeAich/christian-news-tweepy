@@ -15,10 +15,10 @@ api = tweepy.API(auth)
 
 users = ["DrFrankTurek", "ProfJohnLennox", "johnmacarthur", "Ligonier", "Daily__Bible___", "paulwasher", "RCSproul", "allengparr", "RayComfort", "Acts17", "gracetoyou", "WretchedNetwork", "DrStevenJLawson", "HeartCryMission", "Phil_Johnson_", "LivingWatersPub", "ToddFriel", "RFupdates", "aigkenham", "9Marks"]
 
-for i in users:
-    user = api.user_timeline(i, count=5)
+for account in users:
+    user = api.user_timeline(account, count=5)
     try:
-        for x in range(1, 5):
-            api.retweet(user[x]._json["id"])
+        for num in range(1, 5):
+            api.retweet(user[num]._json["id"])
     except tweepy.error.TweepError:
         continue
